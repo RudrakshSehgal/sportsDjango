@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block title %}Contact{% endblock title %}
+{% block body %}
+<div class="container-fluid px-0">
+    <img src="{%static 'img/24.png'%}" class="d-block w-100 mx-0" alt="...">
+</div>
+<div class="container">
+<h1 style="color: brown;padding-top: 10px;text-align: center;">Registation Form</h1>
+<form method="post" action="contact">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Name</label>
+        <input type="text" name='fname' class="form-control" id="name" style="background-color: rgb(192, 226, 247);" placeholder="Enter Name" required>
+      </div>
+     
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email </label>
+      <input type="email" name="email" class="form-control" id="exampleInputEmail1" style="background-color: rgb(192, 226, 247);" placeholder="Enter Email" required>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Phone</label>
+      <input type="number" name="phone" class="form-control" id="Mobile"style="background-color: rgb(192, 226, 247);" placeholder="Enter Phone no" required>
+    </div>
+     <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Gender: &nbsp; &nbsp;&nbsp; </label>   
+        <input type="radio" name="Gender" value="Male">Male
+        <input type="radio" name="Gender" value="Female" style=" margin-left: 10px;">Female
+        <input type="radio" name="Gender" value="others" style="margin-left: 10px;">others
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Sport:&nbsp;&nbsp;&nbsp;  </label>   
+        <input type="checkbox" name="SPORT1" value="Cricket">Cricket
+        <input type="checkbox" name="SPORT2" value="Kabaddi" style=" margin-left: 10px;">Kabaddi
+        <input type="checkbox" name="SPORT3" value="Badmintion"style="margin-left: 10px;">Badmintion
+        <input type="checkbox" name="SPORT4" value="Chess" style="margin-left: 10px;">Chess
+        <input type="checkbox" name="SPORT5" value="Volleyball" style="margin-left: 10px;">Volleyball
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Address</label>
+        <input type="text" name="address"class="form-control" id="Mobile"style="background-color: rgb(192, 226, 247);" placeholder="Address" required>
+      </div>
+   
+    <button type="submit" class="btn btn-primary" >Register</button>
+  </form>
+</div><hr>
+{% endblock body %}
